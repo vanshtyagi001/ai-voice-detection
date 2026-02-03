@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ai-voice-detection-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.7
+      - key: API_KEYS
+        value: test-key-123,guvi-api-key-2024,demo-key-456
+    healthCheckPath: /health
