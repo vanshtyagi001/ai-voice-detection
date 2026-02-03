@@ -180,8 +180,8 @@ async def detect_voice(
                 }
             )
         
-        # Import detector (lazy import for faster startup)
-        from detector import detect_ai_voice
+        # Import fast detector (optimized for cloud deployment)
+        from detector_fast import detect_ai_voice
         
         # Perform detection
         classification, confidence = detect_ai_voice(
